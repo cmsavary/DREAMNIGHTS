@@ -14,6 +14,9 @@ class RoomsController < ApplicationController
 
   private
 
-  def delete
+  def destroy
+    @oom = Room.find(params[:id])
+    @room.destroy
+    redirect_to rooms_path, status: :see_other
   end
 end

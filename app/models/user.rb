@@ -6,12 +6,4 @@ class User < ApplicationRecord
   validates :role, inclusion: { in: %w[admin ordinary_user] }
 
   has_many :bookings
-
-  def admin?
-    role == 'admin'
-  end
-
-  def ordinary_user?
-    role == 'ordinary_user'
-  end
 end
