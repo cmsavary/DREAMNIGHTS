@@ -1,6 +1,5 @@
 class Room < ApplicationRecord
   belongs_to :hotel
-
   has_one_attached :photo
 
   validates :capacity, presence: true, numericality: { only_integer: true, greater_than: 1 }
