@@ -36,6 +36,7 @@ okko.save!
 
 puts "Creating rooms"
 dream1 = Room.new(
+  name: "Dream1",
   price_per_night: 75,
   capacity: 2
 )
@@ -45,6 +46,7 @@ dream1.hotel = pullman
 dream1.save!
 
 dream2 = Room.new(
+  name: "Dream2",
   price_per_night: 85,
   capacity: 2
 )
@@ -54,6 +56,7 @@ dream2.hotel = okko
 dream2.save!
 
 dream3 = Room.new(
+  name: "Dream3",
   price_per_night: 115,
   capacity: 3
 )
@@ -63,6 +66,7 @@ dream3.hotel = pullman
 dream3.save!
 
 dream4 = Room.new(
+  name: "Dream4",
   price_per_night: 90,
   capacity: 2
 )
@@ -72,6 +76,7 @@ dream4.hotel = okko
 dream4.save!
 
 dream5 = Room.new(
+  name: "Dream5",
   price_per_night: 85,
   capacity: 2
 )
@@ -81,6 +86,7 @@ dream5.hotel = pullman
 dream5.save!
 
 dream6 = Room.new(
+  name: "Dream6",
   price_per_night: 92,
   capacity: 2
 )
@@ -90,6 +96,7 @@ dream6.hotel = okko
 dream6.save!
 
 dream7 = Room.new(
+  name: "Dream7",
   price_per_night: 95,
   capacity: 2
 )
@@ -99,6 +106,7 @@ dream7.hotel = pullman
 dream7.save!
 
 dream8 = Room.new(
+  name: "Dream8",
   price_per_night: 82,
   capacity: 2
 )
