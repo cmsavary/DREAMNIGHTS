@@ -1,0 +1,7 @@
+<ul>
+  <% @rooms.each do |room| %>
+    <li><%= room.price_per_night %></li>
+    <li><%= room.capacity %></li>
+    <li><%= room.photo %></li>
+  <% end %>
+</ul>
