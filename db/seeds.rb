@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database"
 User.destroy_all
+Hotel.destroy_all
+Room.destroy_all
 
 puts "Creating users ..."
 celine = User.create!(
@@ -16,7 +18,7 @@ celine = User.create!(
 celine.save!
 
 ninon = User.create!(
-  email: "ninoncaplainy@gmail.com",
+  email: "ninoncaplain@gmail.com",
   password: "123456"
 )
 ninon.save!
