@@ -37,43 +37,43 @@ okko = Hotel.create!(
 okko.save!
 
 puts "Creating rooms"
+file = URI.open("https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg?width=2560")
 dream1 = Room.new(
   name: "Dream1",
   price_per_night: 75,
   capacity: 2
 )
-file_dream1 = URI.open("https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg?width=2560")
-dream1.photo.attach(io: file_dream1, filename: "nes.png", content_type: "image/png")
+dream1.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream1.hotel = pullman
 dream1.save!
 
+file = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
 dream2 = Room.new(
   name: "Dream2",
   price_per_night: 85,
   capacity: 2
 )
-file_dream2 = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
-dream2.photo.attach(io: file_dream2, filename: "nes.png", content_type: "image/png")
+dream2.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream2.hotel = okko
 dream2.save!
 
+file = URI.open("https://3.imimg.com/data3/IL/XU/MY-8679324/5-star-hotel-room-booking-service-500x500.jpg")
 dream3 = Room.new(
   name: "Dream3",
   price_per_night: 115,
   capacity: 3
 )
-file_dream3 = URI.open("https://3.imimg.com/data3/IL/XU/MY-8679324/5-star-hotel-room-booking-service-500x500.jpg")
-dream3.photo.attach(io: file_dream3, filename: "nes.png", content_type: "image/png")
+dream3.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream3.hotel = pullman
 dream3.save!
 
+file = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
 dream4 = Room.new(
   name: "Dream4",
   price_per_night: 90,
   capacity: 2
 )
-file_dream4 = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
-dream4.photo.attach(io: file_dream4, filename: "nes.png", content_type: "image/png")
+dream4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream4.hotel = okko
 dream4.save!
 
