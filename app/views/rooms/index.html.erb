@@ -4,5 +4,6 @@
     <li><%= room.price_per_night %></li>
     <li><%= room.capacity %></li>
     <li><%= room.photo %></li>
+    <li><%= link_to "Find a Dream Room", rooms_path(room), class: "btn btn-primary" %></li>
   <% end %>
 </ul>
