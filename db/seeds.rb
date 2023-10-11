@@ -1,3 +1,4 @@
+require "open-uri"
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -77,43 +78,43 @@ dream4.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream4.hotel = okko
 dream4.save!
 
+file = URI.open("https://3.imimg.com/data3/IL/XU/MY-8679324/5-star-hotel-room-booking-service-500x500.jpg")
 dream5 = Room.new(
   name: "Dream5",
   price_per_night: 85,
   capacity: 2
 )
-file_dream5 = URI.open("https://3.imimg.com/data3/IL/XU/MY-8679324/5-star-hotel-room-booking-service-500x500.jpg")
-dream5.photo.attach(io: file_dream5, filename: "nes.png", content_type: "image/png")
+dream5.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream5.hotel = pullman
 dream5.save!
 
+file = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
 dream6 = Room.new(
   name: "Dream6",
   price_per_night: 92,
   capacity: 2
 )
-file_dream6 = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
-dream6.photo.attach(io: file_dream6, filename: "nes.png", content_type: "image/png")
+dream6.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream6.hotel = okko
 dream6.save!
 
+file = URI.open("https://3.imimg.com/data3/IL/XU/MY-8679324/5-star-hotel-room-booking-service-500x500.jpg")
 dream7 = Room.new(
   name: "Dream7",
   price_per_night: 95,
   capacity: 2
 )
-file_dream7 = URI.open("https://3.imimg.com/data3/IL/XU/MY-8679324/5-star-hotel-room-booking-service-500x500.jpg")
-dream7.photo.attach(io: file_dream7, filename: "nes.png", content_type: "image/png")
+dream7.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream7.hotel = pullman
 dream7.save!
 
+file = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
 dream8 = Room.new(
   name: "Dream8",
   price_per_night: 82,
   capacity: 2
 )
-file_dream8 = URI.open("https://www.astravelsamritsar.com/images/room-slide1.jpg")
-dream8.photo.attach(io: file_dream8, filename: "nes.png", content_type: "image/png")
+dream8.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
 dream8.hotel = okko
 dream8.save!
 
