@@ -2,4 +2,10 @@
 <p><%= @room.price_per_night %></p>
 <p><%= @room.capacity %></p>
 <p><%= @room.photo %></p>
-<p> <%= link_to "Back to Dream Rooms", rooms_path, class: "btn btn-primary" %></p>
+<p>  <div class="card-footer text-center">
+            <%= link_to 'Reserve this Dream Room', new_room_booking_path(@room.id), class: 'btn btn-primary mt-3 me-2' %>
+        </div>
+        </div>
+          <div class="text-center mt-3">
+    <%= link_to 'Back', rooms_path, class: 'btn btn-dark' %>
+  </div></p>

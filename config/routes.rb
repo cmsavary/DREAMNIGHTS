@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get "rooms/:id", to: "rooms#show", as: 'room'
   # Defines the root path route ("/")
   # root "articles#index"
-  delete "rooms/:id", to: "rooms#destroy"
-  delete "hotels/:id", to: "hotels#destroy"
+  # delete "rooms/:id", to: "rooms#destroy"
+  # delete "hotels/:id", to: "hotels#destroy"
+
+  resources :rooms do
+    resources :bookings
+  end
 end
