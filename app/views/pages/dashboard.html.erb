@@ -1,0 +1,18 @@
+<div class="container">
+
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="Bookings" aria-selected="false">My Bookings</button>
+  </li>
+</ul>
+
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab"><h1>My Bookings</h1>
+        <ul>
+        <h4><%= link_to 'Rent a Dream Room', 'Dreams Rooms', :class => 'btn btn-outline-primary' %></h4>
+        <% @bookings.each do |booking| %>
+          <h4> You have booked the Dream Room <%= booking.room.name %> for the price of <%= booking.room.price_per_night %> euros/night for the periode starting <%= booking.start_at %> to <%= booking.ends_at %> </h4>
+          <%= cl_image_tag booking.room.photo.key, class:"picture_dashboard"%>
+        <% end %>
+      </ul></div>
+</div>

@@ -1,5 +1,4 @@
 class HotelsController < ApplicationController
-
   private
 
   def destroy

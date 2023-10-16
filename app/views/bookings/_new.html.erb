@@ -1,0 +1,17 @@
+<div class=“col-md-4”>
+    <div class="bg-white rounded p-2 shadow" >
+      <h3>Book now</h3>
+      <%= simple_form_for [@room, @booking] do |f| %>
+          <form class="simple_form new_booking" id="new_booking" novalidate="novalidate" action="/bookings" accept-charset="UTF-8" method="post">
+              <div class="input-group">
+                <span class="input-group-text" id="start-date-label">From:</span>
+              </div>
+              <%= f.input :start_at, as: :date, html5: true %>
+              <span class="input-group-text" id="end-date-label">To:</span>
+              <div class="input-group mt-2">
+              <%= f.input :ends_at, as: :date, html5: true %>
+                        </div>
+              <%= f.submit class: "btn btn-flat" %>
+      <% end %>
+    </div>
+</div>

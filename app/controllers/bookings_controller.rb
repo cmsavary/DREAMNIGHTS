@@ -1,55 +1,55 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!
-  before_action :set_room, only: [:new, :create]
+  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+
+  def index
+    @bookings = Booking.all
+  end
 
   def new
+    @room = Room.find(params[:room_id])
     @booking = Booking.new
   end
 
   def create
-    @booking = Booking.create!(booking_params)
-    @booking.room = @room
+    @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.status = "Pending"
+    @room = Room.find(params[:room_id])
+    @booking.room = @room
     if @booking.save
-      redirect_to rooms_path, notice: "Booked!"
+      redirect_to dashboard_path
     else
-      render :new
+      render "rooms/show", status: :unprocessable_entity
     end
   end
 
   def edit
-    @booking = Booking.find(params[:id])
+  end
+
+  def show
+    @room = Room.find(params[:room_id])
+    @booking = Booking.new
   end
 
   def update
-    @booking = Booking.find(params[:id])
-    if booking_params[:accept] == 'true'
-      @booking.status = 'accepted'
-    elsif booking_params[:accept] == 'false'
-      @booking.status = 'rejected'
-    end
-
-    if @booking.save
-      redirect_to rooms_path
+    if @booking.update(booking_params)
+      redirect_to booking_path(@booking)
     else
-      render :edit
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @booking = current_user.bookings.find(params[:id])
     @booking.destroy
-    redirect_to rooms_path, status: :see_other
+    redirect_to bookings_path, status: :see_other
   end
 
   private
 
-  def set_room
-    @room = Room.find(params[:room_id])
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
-    params.require(:booking).permit(:start_at, :ends_at, :accept, :room_id, :user_id)
+    params.require(:booking).permit(:start_at, :ends_at)
   end
 end

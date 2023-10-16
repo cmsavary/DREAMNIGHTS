@@ -1,9 +1,33 @@
-<ul>
-  <% @rooms.each do |room| %>
-    <li><%= room.name %></li>
-    <li><%= room.price_per_night %></li>
-    <li><%= room.capacity %></li>
-    <li><%= room.photo %></li>
-    <li><%= link_to "Find a Dream Room", room_url(room), class: "btn btn-primary" %></li>
-  <% end %>
-</ul>
+<div class="container mt-5">
+
+  <h1>Book a Dream Room</h1>
+  <p>What dream do you want to have ? </p>
+    <div class="row">
+      <div class="col-6 ">
+
+        <div class = "room-show-card">
+            <% if @rooms.any? %>
+              <% @rooms.each do |room| %>
+                <div class="card-product">
+                  <% if room.photo.attached? %>
+                    <%= cl_image_tag room.photo.key, height: 300, width: 400, crop: :fill %>
+                  <% else %>
+                    <%= image_tag "https://www.gannett-cdn.com/-mm-/f85d715f4ef18e245988237e803cdef2db1daf68/c=0-255-4256-2656/local/-/media/USATODAY/test/2013/10/25/1382729502000-160857233.jpg?width=2560"  %>
+                  <%end%>
+                    <div class="card-product-infos">
+                      <p> Room : <%= room.name %>  </p>
+                      <p>Rate per night : <%= room.price_per_night %> €/night </p>
+                      <p>Number of dreamers : <%= room.capacity %> </p>
+                      <p> <%= link_to room_path(room), class: "text-decoration-none" do %>
+                      <h5 class="card-title fw-bold text-primary">More about <%= room.name %></h5>
+                      <% end %>
+                    </div>
+                </div>
+              <% end %>
+            <% else %>
+              <em>Sorry, no rooms found.</em>
+            <% end %>
+        </div>
+      </div>
+    </div>
+</div>

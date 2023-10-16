@@ -1,11 +1,18 @@
-<h2><%= @room.name %></h2>
-<p><%= @room.price_per_night %></p>
-<p><%= @room.capacity %></p>
-<p><%= @room.photo %></p>
-<p>  <div class="card-footer text-center">
-            <%= link_to 'Reserve this Dream Room', new_room_booking_path(@room.id), class: 'btn btn-primary mt-3 me-2' %>
-        </div>
-        </div>
-          <div class="text-center mt-3">
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="room-show-card">
+        <%= cl_image_tag @room.photo.key, height: 300, width: 400, crop: :fill %>
+        <h1><%= @room.name %></h1>
+        <p class="room-show-price"><%= @room.price_per_night %> euros/night</p>
+         <p class="room-show-capacity"><%= @room.capacity %> dreamers</p>
+    </div>
+  </div>
+
+    <div class="col-4">
+      <div class="room-show-card">
+        <%= render "bookings/new" %>
+      </div>
+    </div>
     <%= link_to 'Back', rooms_path, class: 'btn btn-dark' %>
-  </div></p>
+</div>
